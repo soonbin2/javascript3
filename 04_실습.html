@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>input 태그에 숫자를 입력하고 버튼을 클릭하면, +10이 된 값을 alert으로 출력해 주세요</h1>
+    <h4>(input 값 : 5 -> alert으로 출력된 값 : 15)</h4>
+
+    <input type="number" id="numberinput">
+    <button onclick ="add()">클릭</button>
+    <script>
+        function add(){
+            const input =document.getElementById('numberinput');
+
+            const number = parseInt(input.value,10);
+
+            if(isNaN(number)) {
+                alert("유효한 숫자를 입력해 주세요.");
+                return;
+            }
+            const result = number +10;
+
+            alert("결과 : " +result);
+        }
+        
+        
+    </script>
+</body>
+</html>
