@@ -6,27 +6,35 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>input 태그에 숫자를 입력하고 버튼을 클릭하면, +10이 된 값을 alert으로 출력해 주세요</h1>
-    <h4>(input 값 : 5 -> alert으로 출력된 값 : 15)</h4>
+    <h2>라디오 버튼을 클릭하면 value값을 이용해 해당 사이트로 이동해 주세요.</h2>
 
-    <input type="number" id="numberinput">
-    <button onclick ="add()">클릭</button>
+    <h5>(location.href 이용)</h5>
+
+    <input type="radio" id="naver" name="site" value="https://www.naver.com" >
+    <label for="naver" >네이버</label><br>
+    <input type="radio" id="google" name="site" value="https://www.google.com" >
+    <label for="google">구글</label><br>
+    <input type="radio" id="school" name="site" value="https://www.w3schools.com" >
+    <label for="school">w3schools</label><br>
+    
+
     <script>
-        function add(){
-            const input =document.getElementById('numberinput');
-
-            const number = parseInt(input.value,10);
-
-            if(isNaN(number)) {
-                alert("유효한 숫자를 입력해 주세요.");
-                return;
-            }
-            const result = number +10;
-
-            alert("결과 : " +result);
-        }
+        const $radios = document.getElementsByName('site');
+        // $radios.forEach(radio =>{
+        //     radio.addEventListener('change',() =>{
+        //         const url = radio.value;
+        //         location.href=url;
+        //     });
+        // })
         
+
+        $radios.forEach(radio => {
+            radio.addEventListener('click', () =>{
+                const url =radio.value;
+                location.href = url;
+            })
+        })
+
         
     </script>
-</body>
 </html>
